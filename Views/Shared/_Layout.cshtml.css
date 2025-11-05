@@ -1,0 +1,81 @@
+﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 30px 0px;
+  white-space: nowrap;
+  line-height: 60px;
+}
+
+.input {
+    width: 250px;
+    height: 80px;
+}
+
+.input content {
+    width: 320px;
+    height: 48px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.input content:focus {
+    border-color: #c97f08;
+    box-shadow: 0 4px 10px rgba(201, 127, 8, 0.2);
+}
+
+.input content::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+.subscribe {
+    display: inline-block;
+    margin-top: -7px;
+    padding: 12px 30px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.1;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+    width: 180px;
+    height: 40px;
+}
+
+.subscribe:hover {
+    color: white;
+    transform: scale(1.1);
+}
