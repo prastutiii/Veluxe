@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\NewFolder1\**" />
+    <Compile Remove="wwwroot\NewFolder\**" />
+    <Content Remove="Views\NewFolder1\**" />
+    <Content Remove="wwwroot\NewFolder\**" />
+    <EmbeddedResource Remove="Views\NewFolder1\**" />
+    <EmbeddedResource Remove="wwwroot\NewFolder\**" />
+    <None Remove="Views\NewFolder1\**" />
+    <None Remove="wwwroot\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Views\Home\Categories.cshtml" />
   </ItemGroup>
 
@@ -20,12 +31,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\NewFolder\" />
     <Folder Include="wwwroot\pages\" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Views\Home\Category.cshtml" />
+    <None Include="Views\Category\Category.cshtml" />
   </ItemGroup>
 
 </Project>

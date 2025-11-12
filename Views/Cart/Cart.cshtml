@@ -1,0 +1,54 @@
+﻿namespace Veluxe.Views.Home
+
+@{
+    ViewData["Title"] = "Cart";
+}
+
+<link rel="stylesheet" href="~/css/cart.css" />
+
+<h2 class="cart">My Cart</h2>
+<div class="cart-container">
+    <table class="cart-table">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <img src="~/assets/img-placeholder.jpg" alt="Product 1" class="cart-img">
+                    <h6>Product Name</h6>
+                </td>
+                <td>Rs. 5,500</td>
+                <td>
+                    <input type="number" value="1" min="1" class="qty-input">
+                </td>
+                <td>Rs. 5,500</td>
+                <td><button class="remove-btn">X</button></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img src="~/assets/img-placeholder.jpg" alt="Product 2" class="cart-img"> 
+                    <h6>Product Name</h6>
+                </td>
+                <td>Rs. 3,400</td>
+                <td>
+                    <input type="number" value="1" min="1" class="qty-input">
+                </td>
+                <td>Rs. 3,400</td>
+                <td><button class="remove-btn">X</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="cart-summary">
+        <h3>Subtotal: Rs. 8,900</h3>
+        <h5>Delivery Charge: Rs. 100</h5>
+        <a href="/Checkout/Checkout" class="checkout-btn">Proceed to Checkout</a>
+    </div>
+</div>

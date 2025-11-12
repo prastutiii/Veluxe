@@ -1,0 +1,100 @@
+﻿namespace Veluxe.Views.Home
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<link rel="stylesheet" href="~/css/checkout.css" />
+
+<h5>Billing Details</h5>
+
+<section class="checkout-section">
+    <div class="billing-left">
+        <form action="/Confirm/Confirm">
+            <h5 class="form-title">Personal Details</h5>
+            <div class="form-row">
+                <div class="form-group half">
+                    <label>First Name</label>
+                    <input type="text" placeholder="Jane"/>
+                </div>
+
+                <div class="form-group half">
+                    <label>Last Name</label>
+                    <input type="text" placeholder="Doe"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="janedoe@example.com" />
+            </div>
+
+            <div class="form-row">
+                <div class="form-group half">
+                    <label>District</label>
+                    <input type="text" placeholder="Kathmandu" />
+                </div>
+
+                <div class="form-group half">
+                    <label>Address</label>
+                    <input type="text" placeholder="Maharajgunj" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="0000000000" />
+            </div>
+
+            <h5 class="form-title">Payment Details</h5>
+
+            <div class="form-group">
+                <label>Credit Card Number</label>
+                <input type="text" placeholder="0000-0000-0000-0000" />
+            </div>
+
+            <div class="form-row">
+                <div class="form-group half">
+                    <label>CVV</label>
+                    <input type="text" placeholder="000" />
+                </div>
+
+                <div class="form-group half">
+                    <label>Expiration Date</label>
+                    <input type="text" placeholder="MM/DD" />
+                </div>
+            </div>
+
+            <button type="submit">Checkout</button>
+
+        </form>
+    </div>
+
+    
+
+    <div class="billing-right">
+        <h5 class="form-title">Your Order</h5>
+        <table class="order-table">
+            <tr>
+                <td>Product Name</td>
+                <td>Price</td>
+            </tr>
+            <tr>
+                <td>Product Name</td>
+                <td>Price</td>
+            </tr>
+        </table>
+        <hr style="border: none; border-top: 1.5px solid black; margin: 15px 0;">
+        <table class="order-table"> 
+            <tr>
+                <td>Delivery Charge</td>
+                <td>Price</td>
+            </tr>
+            <tr>
+                <td>SubTotal</td>
+                <td>Price</td>
+            </tr>
+            
+        </table>
+     
+    </div>
+</section>

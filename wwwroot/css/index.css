@@ -1,0 +1,140 @@
+﻿.veluxe {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin-left: -87px;
+}
+
+.veluxe-img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: fill;
+    display: block;
+}
+
+.veluxe-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.veluxe-text {
+    text-align: center;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+
+    .veluxe-text h1 {
+        font-size: 100px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .veluxe-text p {
+        font-size: 25px;
+    }
+
+.veluxe-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #c97f08;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+    .veluxe-button:hover {
+        color: black;
+        transform: scale(1.1);
+    }
+
+.categories-section1 {
+    text-align: center;
+    padding: 150px 20px 60px;
+    margin-top: 20px;
+    background-color: #fafaf7;
+}
+    .categories-section1 h2 {
+        font-size: 28px;
+        margin-bottom: 40px;
+        font-weight: bold;
+        color: #222;
+    }
+
+.categories-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    margin-top: 20px;
+
+    .categories-box {
+        background-color: #fafaf7;
+        border: none;
+        text-decoration: none;
+        color: inherit;
+        border-radius: 6px;
+        width: 280px;
+        padding: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: inline-block;
+        position: relative;
+        z-index: 10;
+    }
+
+        .categories-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 15px rgba(0,0,0,0.15);
+        }
+
+        .categories-box img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .categories-box h3 {
+            margin-bottom: 18px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .categories-box p {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+}
+
+.explore {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 30px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+    width: 220px;
+}
+
+    .explore:hover {
+        color: white;
+        transform: scale(1.1);
+    }

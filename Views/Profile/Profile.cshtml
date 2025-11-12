@@ -1,0 +1,47 @@
+﻿namespace Veluxe.Views.Home
+
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<link rel="stylesheet" href="~/css/profile.css" />
+
+<section class="profile-section">
+    <div class="profile-left">
+        <img src="~/assets/img-placeholder.jpg" alt="User Photo" class="profile-image" />
+        <h2 class="user-name">Jane Doe</h2>
+        <p class="user-email">janedoe@example.com</p>
+
+        <h3>Account Information</h3>
+        <p><strong>Username:</strong> janedoe</p>
+        <p><strong>Member Since:</strong> January 2024</p>
+
+        <h3>Default Address</h3>
+        <p>123 Main Street, Kathmandu, Nepal</p>
+
+       
+    </div>
+
+    <div class="profile-right">
+        <h5>My Orders</h5>
+        <div class="panel">
+            <p>Order #1001 - Pending</p>
+            <p>Order #1002 - Shipped</p>
+        </div>
+
+        <br />
+
+        <h5>My Addresses</h5>
+        <div class="panel">
+            <p>Order 123 Street Kathmandu</p>
+            <p>Order 246 Street Kathmandu</p>
+        </div>
+        <br />
+        <h5>Notifications</h5>
+        <h5>Help Center</h5>
+        <button class="edit-profile-btn">Edit Profile</button>
+        <button class="logout-btn">Logout</button>
+    </div>
+</section>
+
+
