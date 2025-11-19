@@ -1,0 +1,82 @@
+﻿.stats-container {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.stat-box {
+    flex: 1;
+    background: #fff;
+    padding: 25px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    text-align: center;
+    border-left: 3px solid #4b49ac;
+    height: 50px;
+    width: 70px;
+}
+
+    .stat-box h6 {
+        margin: -15px;
+        display: flex;
+        font-size: 16px;
+        color: #444;
+        font-weight: 400;
+    }
+
+    .stat-box h4 {
+        margin-top: -60px;
+        margin-left: -15px;
+        font-size: 30px;
+        display: flex;
+        font-weight: 600;
+        color: #222;
+    }
+
+    .stat-box img {
+        width: 60px;
+        height: 70px;
+        margin-top: -2px;
+        margin-left: 125px;
+    }
+
+.graphs {
+    background-color: #fafaf7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+    width: 950px;
+}
+
+.bar-graph, .line-graph {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.bar-graph {
+    background-color: bisque;
+    width: 400px;
+    height: 300px;
+    display: flex;
+}
+
+    .bar-graph img{
+        width: 400px;
+        height: 300px;
+        align-content: center;
+    }
+
+.line-graph {
+    background-color: bisque;
+    width: 500px;
+    height: 300px;
+    justify-content: flex-end;
+    display: flex;
+}
+
+    .line-graph img {
+        width: 500px;
+        height: 300px;
+        align-content: center;
+    }
