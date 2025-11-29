@@ -1,22 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
 using Veluxe.Data;
 
-namespace Veluxe.Controllers
+using Veluxe.Models;
+using System.Linq;
+
+namespace Veluxe.Views.Test
 {
-    public class CategoryController : Controller
+    public class TestController : Controller
     {
         private readonly VeluxeDbContext _context;
 
-        public CategoryController(VeluxeDbContext context)
+        public TestController(VeluxeDbContext context)
         {
             _context = context;
         }
 
-        public IActionResult Category()
+        public IActionResult Test()
         {
+            // Get all categories from database
             var categories = _context.Categories.ToList();
+
+            // Pass to the view
             return View(categories);
         }
     }

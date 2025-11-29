@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Veluxe.Models.CategoryModel>
+
+@{
+    ViewData["Title"] = "Test";
+}
+
+<h1>Categories</h1>
+
+@if (!Model.Any())
+{
+    <p>No categories found.</p>
+}
+else
+{
+    <div style="display:flex; gap:20px; flex-wrap:wrap;">
+        @foreach (var category in Model)
+        {
+            <div style="border:1px solid #ccc; padding:10px; width:200px; text-align:center;">
+                <img src="@category.image_url" alt="@category.category_name" style="width:100%; height:auto;" />
+                <h3>@category.category_name</h3>
+                <p>@category.description</p>
+            </div>
+        }
+    </div>
+}

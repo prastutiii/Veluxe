@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Veluxe.Models.CategoryModel>
+@{
     ViewData["Title"] = "Home";
 }
 
@@ -17,30 +18,19 @@
 
 <section class="categories-section1">
     <h2>Experience Elegance</h2>
-
     <div class="categories-container">
-        <a href="#" class="categories-box">
-            <h3>Just Debuted</h3>
-            <img src="~/assets/img-placeholder.jpg" alt="Just Debuted">
-            <h3></h3>
-        </a>
-
-        <a href="#" class="categories-box">
-            <h3>Best of Fall</h3>
-            <img src="~/assets/img-placeholder.jpg" alt="Best of Fall">
-            <h3></h3>
-        </a>
-    
-
-   
-        <a href="#" class="categories-box">
-            <h3>The Evening Edit</h3>
-            <img src="~/assets/img-placeholder.jpg" alt="The Evening Edits">
-            <h3></h3>
-        </a>
+        @foreach (var category in Model)
+        {
+            <a href="#" class="categories-box">
+                <h3>@category.category_name</h3>
+                <img src="@category.image_url" alt="Just Debuted">
+                <h3></h3>
+            </a>
+        }
     </div>
 
-    <a href="#" class="explore">Discover More</a>
+        <a href="#" class="explore">Discover More</a>
+   
 
 </section>
 

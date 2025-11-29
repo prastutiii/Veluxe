@@ -1,7 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using Veluxe.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<VeluxeDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("VeluxeConnection")));
 
 var app = builder.Build();
 
