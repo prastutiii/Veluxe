@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Manage Products";
+    Layout = "_AdminLayout";
+}
+
+<link rel="stylesheet" href="~/css/adminProduct.css" />
+
+<div class="manage-products">
+    <h2>Manage Products</h2>
+
+    <a asp-action="Create" class="add-btn">+ Add New Product</a>
+
+    <table class="product-table">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.product_id</td>
+                    <td>@item.product_name</td>
+                    <td>@item.Category?.category_name</td>
+                    <td>Rs. @item.price</td>
+                    <td>
+                        <a asp-action="Read" asp-route-id="@item.product_id" class="edit-btn">View</a>
+                        <a asp-action="Update" asp-route-id="@item.product_id" class="edit-btn">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.product_id" class="delete-btn">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

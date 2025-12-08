@@ -1,0 +1,41 @@
+﻿@model Veluxe.Models.OrderModel
+
+@{
+    ViewData["Title"] = "Create Order";
+    Layout = "_AdminLayout";
+}
+<link rel="stylesheet" href="~/css/adminCRUD.css" />
+
+<div class="container-section">
+    <div class="section">
+        <h2 class="form-title">View Order</h2>
+        <form asp-action="Read" method="post">
+            <div class="form-group">
+                <label asp-for="order_id">Order ID:</label>
+                <input value="@Model.order_id" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="user_id">User ID:</label>
+                <input value="@Model.user_id" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="order_date">Date:</label>
+                <input type="date" value="@Model.order_date.ToString("yyyy-MM-dd")" readonly />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="total_amount">Total Amount:</label>
+                <input value="@Model.total_amount" readonly />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="status">Status:</label>
+                <input value="@Model.status" readonly />
+            </div>
+
+            <a asp-action="AdminOrder" class="container-section button">Back</a>
+        </form>
+    </div>
+</div>

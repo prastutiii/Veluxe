@@ -1,0 +1,33 @@
+﻿@model Veluxe.Models.OrderModel
+
+@{
+    ViewData["Title"] = "Delete Order";
+    Layout = "_AdminLayout";
+}
+<link rel="stylesheet" href="~/css/adminCRUD.css" />
+
+<h2 class="text-danger">Delete Order</h2>
+<hr />
+
+<div class="container-section">
+    <div class="section">
+        <h4>Are you sure you want to delete this order?</h4>
+        <br />
+
+        <dl class="row">
+            <dt>Order ID</dt>
+            <dd>@Model.order_id</dd>
+
+            <dt>User ID</dt>
+            <dd>@Model.user_id</dd>
+        </dl>
+
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="order_id" />
+
+            <button type="submit">Delete</button>
+            <a asp-action="AdminOrder">Cancel</a>
+        </form>
+    </div>
+</div>
+

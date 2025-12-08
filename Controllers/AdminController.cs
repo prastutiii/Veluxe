@@ -9,11 +9,6 @@ namespace Veluxe.Controllers
             return View();
         }
 
-        public IActionResult AdminProduct()
-        {
-            return View();
-        }
-
         public IActionResult AdminOrder()
         {
             return View();

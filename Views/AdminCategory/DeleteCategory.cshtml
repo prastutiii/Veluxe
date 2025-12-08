@@ -1,0 +1,33 @@
+﻿@model Veluxe.Models.CategoryModel
+
+@{
+    ViewData["Title"] = "Delete Category";
+    Layout = "_AdminLayout";
+}
+<link rel="stylesheet" href="~/css/adminCRUD.css" />
+
+<h2 class="text-danger">Delete Category</h2>
+<hr />
+
+<div class="container-section">
+    <div class="section">
+        <h4>Are you sure you want to delete this category?</h4>
+        <br />
+
+        <dl class="row">
+            <dt>Category ID</dt>
+            <dd>@Model.category_id</dd>
+
+            <dt>Name</dt>
+            <dd>@Model.category_name</dd>
+        </dl>
+
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="category_id" />
+
+            <button type="submit">Delete</button>
+            <a asp-action="AdminCategory">Cancel</a>
+        </form>
+    </div>
+</div>
+

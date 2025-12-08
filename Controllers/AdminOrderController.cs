@@ -1,0 +1,94 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Veluxe.Data;
+using Veluxe.Models;
+
+namespace Veluxe.Controllers
+{
+    public class AdminOrderController : Controller
+    {
+        private readonly VeluxeDbContext _context;
+
+        public AdminOrderController(VeluxeDbContext context)
+        {
+            _context = context;
+        }
+        public IActionResult AdminOrder()
+        {
+            var orders = _context.Orders
+                .Include(o => o.Users)
+                .ToList();
+            return View(orders);
+        }
+
+        // CREATE GET
+        public IActionResult Create()
+        {
+            return View("CreateOrder");
+        }
+
+        // CREATE POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(OrderModel order)
+        {
+            if (!ModelState.IsValid) return View(order);
+
+            _context.Orders.Add(order);
+            _context.SaveChanges();
+            return RedirectToAction("AdminOrder");
+        }
+
+        // EDIT GET
+        public IActionResult Update(string id)
+        {
+            var order = _context.Orders.Find(id);
+            if (order == null) return NotFound();
+
+            return View("UpdateOrder", order);
+        }
+
+        // EDIT POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Update(OrderModel order)
+        {
+            if (!ModelState.IsValid) return View(order);
+
+            _context.Orders.Update(order);
+            _context.SaveChanges();
+            return RedirectToAction("AdminOrder");
+        }
+
+        // DETAILS
+        public IActionResult Read(string id)
+        {
+            var order = _context.Orders.Find(id);
+            if (order == null) return NotFound();
+
+            return View("ReadOrder", order);
+        }
+
+        // DELETE GET
+        public IActionResult Delete(string id)
+        {
+            var order = _context.Orders.Find(id);
+            if (order == null) return NotFound();
+
+            return View("DeleteOrder", order);
+        }
+
+        // DELETE POST
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirmed(string id)
+        {
+            var order = _context.Orders.Find(id);
+            if (order == null) return NotFound();
+
+            _context.Orders.Remove(order);
+            _context.SaveChanges();
+            return RedirectToAction("AdminOrder");
+        }
+    }
+}

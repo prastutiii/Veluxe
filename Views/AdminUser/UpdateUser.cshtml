@@ -1,0 +1,52 @@
+﻿@model Veluxe.Models.UserModel
+
+@{
+    ViewData["Title"] = "Update User";
+    Layout = "_AdminLayout";
+}
+<link rel="stylesheet" href="~/css/adminCRUD.css" />
+
+<div class="container-section">
+    <div class="section">
+        <h2 class="form-title">Update User</h2>
+        <form asp-action="Update" method="post">
+            <div class="form-group">
+                <label asp-for="user_id">User ID:</label>
+                <input asp-for="user_id" readonly/>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="name">User Name:</label>
+                <input asp-for="name" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="email">Email:</label>
+                <input asp-for="email" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="address">Address:</label>
+                <input asp-for="address" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="phone">Phone:</label>
+                <input asp-for="phone" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="password">Password:</label>
+                <input asp-for="password" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="role">Role:</label>
+                <input asp-for="role" />
+            </div>
+
+            <button type="submit">Update User</button>
+            <a asp-action="AdminUser" class="container-section button">Cancel</a>
+        </form>
+    </div>
+</div>

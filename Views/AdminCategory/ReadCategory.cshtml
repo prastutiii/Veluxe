@@ -1,0 +1,36 @@
+﻿@model Veluxe.Models.CategoryModel
+
+@{
+    ViewData["Title"] = "Create Category";
+    Layout = "_AdminLayout";
+}
+<link rel="stylesheet" href="~/css/adminCRUD.css" />
+
+<div class="container-section">
+    <div class="section">
+        <h2 class="form-title">View Category</h2>
+        <form asp-action="Read" method="post">
+            <div class="form-group">
+                <label asp-for="category_id">Category ID:</label>
+                <input value="@Model.category_id" readonly />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="category_name">Category Name:</label>
+                <input value="@Model.category_name" readonly />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="description">Description:</label>
+                <input value="@Model.description" readonly />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="image_url">Image:</label>
+                <input value="@Model.image_url" readonly />
+            </div>
+
+            <a asp-action="AdminCategory" class="container-section button">Back</a>
+        </form>
+    </div>
+</div>

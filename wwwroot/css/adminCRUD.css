@@ -1,0 +1,119 @@
+﻿.container-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fafaf7;
+    margin-top: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+    .container-section button {
+        display: inline-block;
+        margin-top: 20px;
+        margin-right: 7px;
+        padding: 12px 30px;
+        background-color: black;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 8px;
+        border-color: white;
+        transition: 0.3s;
+    }
+
+        .container-section button:hover {
+            color: white;
+            transform: scale(1.1);
+        }
+
+    .container-section a {
+        display: inline-block;
+        margin-top: 20px;
+        margin-left: 7px;
+        padding: 12px 30px;
+        background-color: black;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 8px;
+        border-color: white;
+        transition: 0.3s;
+    }
+
+        .container-section a:hover {
+            color: white;
+            transform: scale(1.1);
+        }
+
+.section {
+    width: 500px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    border: 2px solid #ddd;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+    .form-group label {
+        display: block;
+        font-weight: 300;
+        margin-bottom: 5px;
+        color: #333;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 10px 12px;
+        border: none;
+        border-bottom: 1.5px solid #ccc;
+        outline: none;
+        transition: 0.2s;
+    }
+
+        .form-group input:focus {
+            border-color: black;
+            box-shadow: 0 0 5px rgba(75,108,183,0.2);
+        }
+
+.form-title {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 28px;
+    text-align: center;
+}
+
+dl.row {
+    margin: 20px 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+    dl.row dt {
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 1px;
+        margin-left: -50px;
+        float: left;
+        width: 100%;
+        clear: left;
+    }
+
+    dl.row dd {
+        margin-left: 35%;
+        margin-bottom: 15px;
+        color: #333;
+        width: 100%;
+        font-weight: 300;
+    }

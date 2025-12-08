@@ -10,5 +10,7 @@ namespace Veluxe.Models
         public string category_name { get; set; }
         public string description { get; set; }
         public string image_url { get; set; }
+
+        public ICollection<ProductModel> Products { get; set; }
     }
 }

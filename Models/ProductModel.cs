@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace Veluxe.Models
 {
     public class ProductModel
@@ -11,5 +12,9 @@ namespace Veluxe.Models
         public string description { get; set; }
         public double price { get; set; }
         public string image_url { get; set; }
+        public string category_id { get; set; }
+
+        [ForeignKey("category_id")]
+        public CategoryModel Category { get; set; }
     }
 }
