@@ -1,47 +1,74 @@
 ﻿namespace Veluxe.Views.Home
-
+@model Veluxe.Models.UserModel; 
 @{
     ViewData["Title"] = "Profile";
 }
+
 
 <link rel="stylesheet" href="~/css/profile.css" />
 
 <section class="profile-section">
     <div class="profile-left">
         <img src="~/assets/img-placeholder.jpg" alt="User Photo" class="profile-image" />
-        <h2 class="user-name">Jane Doe</h2>
-        <p class="user-email">janedoe@example.com</p>
+        <h2 class="user-name">@Model.name</h2>
+        <p class="user-email">@Model.email</p>
 
         <h3>Account Information</h3>
-        <p><strong>Username:</strong> janedoe</p>
-        <p><strong>Member Since:</strong> January 2024</p>
+        <p><strong>Username:</strong> @Model.name</p>
+        <p><strong>Phone Number:</strong> @Model.phone</p>
 
         <h3>Default Address</h3>
-        <p>123 Main Street, Kathmandu, Nepal</p>
+        <p>@Model.address</p>
 
        
     </div>
 
     <div class="profile-right">
         <h5>My Orders</h5>
-        <div class="panel">
-            <p>Order #1001 - Pending</p>
-            <p>Order #1002 - Shipped</p>
-        </div>
-
-        <br />
+        @if (Model.Orders != null && Model.Orders.Any())
+        {
+            foreach (var order in Model.Orders)
+            {
+                <div class="panel">
+                    <p>Order <u>@order.order_id</u> - @order.status</p>
+                    <h5>Total Amount: @order.total_amount</h5>
+                    <h5>Date: @order.order_date.ToString("yyyy-MM-dd")</h5>
+                </div>
+                <br />
+            }
+        }
+        else
+        {
+            <p>No orders found.</p>
+        }
 
         <h5>My Addresses</h5>
         <div class="panel">
-            <p>Order 123 Street Kathmandu</p>
-            <p>Order 246 Street Kathmandu</p>
+            <p>@Model.address</p>
         </div>
         <br />
         <h5>Notifications</h5>
         <h5>Help Center</h5>
-        <button class="edit-profile-btn">Edit Profile</button>
-        <button class="logout-btn">Logout</button>
+        <a asp-action="EditProfile" asp-route-id="" class="edit-profile-btn">Edit</a>
+        @if (Context.Session.GetString("user_id") != null)
+        {
+        <a asp-controller="Registration" asp-action="Logout" asp-route-id="" class="logout-btn">Logout</a>
+        }
     </div>
 </section>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"]
+    </div>
+}
 
 

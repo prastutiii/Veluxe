@@ -1,0 +1,59 @@
+﻿namespace Veluxe.Views.Home
+@model Veluxe.Models.UserModel;
+@{
+    ViewData["Title"] = "EditProfile";
+}
+
+<link rel="stylesheet" href="~/css/profile.css" />
+<link rel="stylesheet" href="~/css/adminCRUD.css" />
+
+<section class="profile-section">
+    <div class="profile-left">
+        <img src="~/assets/img-placeholder.jpg" alt="User Photo" class="profile-image" />
+        <h2 class="user-name">@Model.name</h2>
+        <p class="user-email">@Model.email</p>
+
+        <h3>Account Information</h3>
+        <p><strong>Username:</strong> @Model.name</p>
+        <p><strong>Phone Number:</strong> @Model.phone</p>
+
+        <h3>Default Address</h3>
+        <p>@Model.address</p>
+
+
+    </div>
+
+    <div class="profile-left">
+        <h2 class="form-title">Edit Profile</h2>
+        <form asp-action="EditProfile" method="post">
+            <div class="form-group">
+                <label asp-for="name">User Name:</label>
+                <input asp-for="name" value="@Model.name"/>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="email">Email:</label>
+                <input asp-for="email" value="@Model.email" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="address">Address:</label>
+                <input asp-for="address" value="@Model.address" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="phone">Phone:</label>
+                <input asp-for="phone" value="@Model.phone" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="password">Password:</label>
+                <input asp-for="password" value="@Model.password" />
+            </div>
+            <button type="submit">Save Changes</button>
+            <a asp-action="Profile" class="container-section button">Cancel</a>
+        </form>
+    </div>
+</section>
+
+

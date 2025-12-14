@@ -4,11 +4,12 @@
     justify-content: flex-start;
     gap: 50px;
     background-color: #fafaf7;
-    margin-top: 80px;
+    margin-top: 0px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .profile-left, .profile-right {
+    margin-top: 70px;
     background-color: #fff;
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     padding: 30px;
@@ -21,8 +22,48 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 525px;
+    height: 600px;
 }
+
+    .profile-left button {
+        display: inline-block;
+        margin-top: 20px;
+        margin-right: 7px;
+        padding: 12px 30px;
+        background-color: black;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 8px;
+        border-color: white;
+        transition: 0.3s;
+    }
+
+        .profile-left button:hover {
+            color: white;
+            transform: scale(1.1);
+        }
+
+    .profile-left a {
+        display: inline-block;
+        margin-top: 20px;
+        margin-left: 7px;
+        padding: 12px 30px;
+        background-color: black;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 8px;
+        border-color: white;
+        transition: 0.3s;
+    }
+
+        .profile-left a:hover {
+            color: white;
+            transform: scale(1.1);
+        }
 
 .profile-right {
     flex: 1;
@@ -83,28 +124,46 @@
 }
 
 .edit-profile-btn {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 7px;
+    padding: 12px 30px;
     background-color: black;
     color: white;
-    border: groove black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    border-color: white;
+    transition: 0.3s;
 }
 
     .edit-profile-btn:hover {
-        background-color: white;
-        color: black;
+        color: white;
+        transform: scale(1.1);
     }
 
 .logout-btn {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 7px;
+    padding: 12px 30px;
     background-color: black;
     color: white;
-    border: groove black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    border-color: white;
+    transition: 0.3s;
 }
 
     .logout-btn:hover {
-        background-color: white;
-        color: black
+        color: white;
+        transform: scale(1.1);
     }
 
-/* Responsive */
+
 @media (max-width: 800px) {
     .profile-container {
         flex-direction: column;
@@ -121,15 +180,24 @@
     background-color: white;
     border-left: 1px solid black;
     margin-top: 5px;
-    font-size: 18px;
 }
 
-    /* Panel items */
+    .panel h5 {
+        margin: 5px 0;
+        padding: 5px 0;
+        font-weight: 200;
+        font-size: 14px;
+    }
+
+
     .panel p {
         margin: 5px 0;
         padding: 5px 0;
-        border-bottom: 1px solid black;
-
+        font-size: 18px;
+        font-weight: 5;
+        text-decoration: none;
+        border-bottom: none;
+        
     }
 
         .panel p:last-child {

@@ -4,7 +4,7 @@ namespace Veluxe.Models
     public class CategoryModel
     {
         [Key]
-        public string category_id { get; set; }
+        public int category_id { get; set; }
 
         [Required]
         public string category_name { get; set; }

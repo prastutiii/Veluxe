@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Veluxe.Data;
+using Veluxe.Filters.Veluxe.Filters;
 using Veluxe.Models;
 
 namespace Veluxe.Controllers
 {
+    [AdminAuthorize]
     public class AdminOrderController : Controller
     {
         private readonly VeluxeDbContext _context;
@@ -40,7 +42,7 @@ namespace Veluxe.Controllers
         }
 
         // EDIT GET
-        public IActionResult Update(string id)
+        public IActionResult Update(int id)
         {
             var order = _context.Orders.Find(id);
             if (order == null) return NotFound();
@@ -61,7 +63,7 @@ namespace Veluxe.Controllers
         }
 
         // DETAILS
-        public IActionResult Read(string id)
+        public IActionResult Read(int id)
         {
             var order = _context.Orders.Find(id);
             if (order == null) return NotFound();
@@ -70,7 +72,7 @@ namespace Veluxe.Controllers
         }
 
         // DELETE GET
-        public IActionResult Delete(string id)
+        public IActionResult Delete(int id)
         {
             var order = _context.Orders.Find(id);
             if (order == null) return NotFound();
@@ -81,7 +83,7 @@ namespace Veluxe.Controllers
         // DELETE POST
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(string id)
+        public IActionResult DeleteConfirmed(int id)
         {
             var order = _context.Orders.Find(id);
             if (order == null) return NotFound();

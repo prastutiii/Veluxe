@@ -1,20 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
+using Veluxe.Filters.Veluxe.Filters;
 namespace Veluxe.Controllers
 {
+    [AdminAuthorize]
     public class AdminController : Controller
     {
         public IActionResult Dashboard()
-        {
-            return View();
-        }
-
-        public IActionResult AdminOrder()
-        {
-            return View();
-        }
-
-        public IActionResult AdminUser()
         {
             return View();
         }
