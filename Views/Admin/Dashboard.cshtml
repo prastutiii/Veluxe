@@ -1,43 +1,67 @@
-﻿@{
+﻿@model Veluxe.Models.DashboardModel
+@using System.Text.Json
+@{
     ViewData["Title"] = "Dashboard";
     Layout = "_AdminLayout";
 }
 
 <link rel="stylesheet" href="~/css/adminDashboard.css"  />
 
-<h1>Welcome back, Name!</h1>
+<h1>Welcome back, Admin!</h1>
 <p>Here's what happening with your store today.</p>
 <div class="stats-container">
     <div class="stat-box">
         <h6>Total Sales</h6>
         <img src="~/assets/dollar.jpg" />
-        <h4>$25,024</h4>
+        <h4>@Model.TotalSales</h4>
     </div>
     <div class="stat-box">
         <h6>Orders</h6>
         <img src="~/assets/orders.png" />
-        <h4>150</h4>
+        <h4>@Model.TotalOrders</h4>
     </div>
     <div class="stat-box">
         <h6>Users</h6>
         <img src="~/assets/user.jpg" />
-        <h4>320</h4>
+        <h4>@Model.TotalUsers</h4>
     </div>
     <div class="stat-box">
         <h6>Products</h6>
         <img src="~/assets/bag.jpg" />
-        <h4>320</h4>
+        <h4>@Model.TotalProducts</h4>
     </div>
 
 </div>
 
 <div class="graphs">
-    <div class="bar-graph">
-        <img src="~/assets/bar.jpg" />
-    </div>
-
-    <div class="line-graph">
-        <img src="~/assets/line.jpg" />
-    </div>
+   <h3>Monthly Sales (Bar Graph)</h3>
+<canvas id="salesChart" width="600" height="300"></canvas>
 </div>
 
+
+@section Scripts{
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('salesChart').getContext('2d');
+        const salesChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: @Html.Raw(JsonSerializer.Serialize(Model.Months)),
+                datasets: [{
+                    label: 'Total Sales (Rs)',
+                    data: @Html.Raw(JsonSerializer.Serialize(Model.MonthlySales)),
+                    backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+}
