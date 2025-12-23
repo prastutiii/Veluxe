@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 namespace Veluxe.Models
 {
     public class UserModel
@@ -15,6 +16,6 @@ namespace Veluxe.Models
         public string password { get; set; }
         public string role { get; set; }
 
-        public ICollection<OrderModel> Orders { get; set; }
+        public ICollection<OrderModel>? Orders { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿namespace Veluxe.Views.Confirm
+@model Veluxe.Models.OrderModel;
 
 @{
     ViewData["Title"] = "Confirm";
@@ -10,8 +11,9 @@
     <div class="confirm-box">
         <p class="name">V E L U X E</p>
         <h2>THANK YOU!</h2>
-        <p>Hi [Customer Name], your order has been successfully placed.
-        Your Order Number is <strong>#123456</strong>.
+        <p>
+            Hi @Model.first_name, your order has been successfully placed.
+            Your Order Number is <strong>#1@Model.order_id</strong>.
         We’ll send you a confirmation email with the order details shortly.
         You can track your order status anytime from your <a href="/Profile/Profile" class="profile-link">Profile</a>.</p>
         <p>Happy Shopping!</p>

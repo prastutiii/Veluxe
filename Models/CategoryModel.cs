@@ -11,6 +11,6 @@ namespace Veluxe.Models
         public string description { get; set; }
         public string image_url { get; set; }
 
-        public ICollection<ProductModel> Products { get; set; }
+        public ICollection<ProductModel>? Products { get; set; }
     }
 }

@@ -44,8 +44,9 @@ namespace Veluxe.Controllers
         }
 
         [HttpPost]
-        public IActionResult PlaceOrder(OrderModel order)
+        public IActionResult PlaceOrder(CheckoutModel model)
         {
+            var order = model.Orders;
             var userId = HttpContext.Session.GetInt32("user_id");
             if (!userId.HasValue)
                 return RedirectToAction("Login", "Registration");

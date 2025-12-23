@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace Veluxe.Models
 {
@@ -16,6 +17,7 @@ namespace Veluxe.Models
         public int category_id { get; set; }
 
         [ForeignKey("category_id")]
+        [ValidateNever]
         public CategoryModel Category { get; set; }
     }
 }

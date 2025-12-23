@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Veluxe.Models
@@ -17,13 +18,16 @@ namespace Veluxe.Models
         public string? district { get; set; }
         public string? address{ get; set; }
         public string? phone_number { get; set; }
-        public string status { get; set; }
+        public string? status { get; set; }
         public decimal total_amount { get; set; }
         public int user_id { get; set; }
 
         [ForeignKey("user_id")]
-        public UserModel Users { get; set; }
+        [ValidateNever]
+        public UserModel? Users { get; set; }
 
+
+        [ValidateNever]
         public List<OrderDetailModel> Order_Details { get; set; }
     }
 }

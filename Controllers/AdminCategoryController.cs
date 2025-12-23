@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Veluxe.Data;
 using Veluxe.Filters.Veluxe.Filters;
 using Veluxe.Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Veluxe.Controllers
 {
@@ -32,7 +33,7 @@ namespace Veluxe.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(CategoryModel category)
         {
-            if (!ModelState.IsValid) return View(category);
+            if (!ModelState.IsValid)return View("CreateCategory", category);
 
             _context.Categories.Add(category);
             _context.SaveChanges();
@@ -53,7 +54,7 @@ namespace Veluxe.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Update(CategoryModel category) 
         {
-            if (!ModelState.IsValid) return View(category);
+            if (!ModelState.IsValid) return View("UpdateCategory", category);
 
             _context.Categories.Update(category);
             _context.SaveChanges();

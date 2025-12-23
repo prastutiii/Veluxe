@@ -17,6 +17,7 @@
                 <th>Category ID</th>
                 <th>Category Name</th>
                 <th>Description</th>
+                <th>Image</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -28,6 +29,7 @@
                     <td>@item.category_id</td>
                     <td>@item.category_name</td>
                     <td>@item.description</td>
+                    <td><img src= "~/assets/@item.image_url" /></td>
                     <td>
                         <a asp-action="Read" asp-route-id="@item.category_id" class="edit-btn">View</a>
                         <a asp-action="Update" asp-route-id="@item.category_id" class="edit-btn">Edit</a>

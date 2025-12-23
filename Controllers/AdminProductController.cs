@@ -34,7 +34,7 @@ namespace Veluxe.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(ProductModel product)
         {
-            if (!ModelState.IsValid) return View(product);
+            if (!ModelState.IsValid) return View("CreateProduct", product);
 
             _context.Products.Add(product);
             _context.SaveChanges();
@@ -55,7 +55,7 @@ namespace Veluxe.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Update(ProductModel product)
         {
-            if (!ModelState.IsValid) return View(product);
+            if (!ModelState.IsValid) return View("UpdateProduct", product);
 
             _context.Products.Update(product);
             _context.SaveChanges();

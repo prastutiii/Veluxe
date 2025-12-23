@@ -12,12 +12,42 @@
         <form asp-action="Read" method="post">
             <div class="form-group">
                 <label asp-for="order_id">Order ID:</label>
-                <input value="@Model.order_id" />
+                <input value="@Model.order_id" readonly/>
             </div>
 
             <div class="form-group">
                 <label asp-for="user_id">User ID:</label>
-                <input value="@Model.user_id" />
+                <input value="@Model.user_id" readonly/>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="first_name">First_Name:</label>
+                <input value="@Model.first_name" readonly />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="last_name">Last_Name:</label>
+                <input value="@Model.last_name" readonly />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="email">Email:</label>
+                <input value="@Model.email" readonly />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="district">District:</label>
+                <input value="@Model.district" readonly />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="address">Address:</label>
+                <input value="@Model.address" readonly />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="phone_number">Phone:</label>
+                <input value="@Model.phone_number" readonly />
             </div>
 
             <div class="form-group">
