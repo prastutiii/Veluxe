@@ -39,7 +39,8 @@ namespace Veluxe.Controllers
                     option.Expires = DateTime.Now.AddDays(7);
                     Response.Cookies.Append("user_name", user.name, option);
 
-                    if (user.role == "admin")
+                    var role = (user.role ?? "").Trim().ToLower();
+                    if (role == "admin")
                     {
                         return RedirectToAction("Dashboard", "Admin");
                     }

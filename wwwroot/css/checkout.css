@@ -48,7 +48,6 @@
     flex: 1;
     max-width: 500px;
     margin-right: 50px;
-    margin-top: -250px;
     width: 200px;
     align-items: center;
     justify-content: center;
@@ -104,6 +103,12 @@
     border-collapse: collapse;
     border: 2px solid #ddd;
 }
+    .order-table th {
+        padding: 12px 20px;
+        text-align: left;
+        font-weight: 400;
+        font-size: 22px;
+    }
 
     .order-table td {
         padding: 12px 20px;

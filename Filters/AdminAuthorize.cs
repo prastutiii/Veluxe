@@ -12,7 +12,7 @@ namespace Veluxe.Filters
             {
                 var role = context.HttpContext.Session.GetString("user_role");
 
-                if (role != "Admin")
+                if (role != "admin")
                 {
                     context.Result = new RedirectToActionResult("Login", "Registration", null);
                 }

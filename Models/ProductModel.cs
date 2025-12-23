@@ -10,7 +10,8 @@ namespace Veluxe.Models
         [Required]
         public string product_name { get; set; }
         public string description { get; set; }
-        public double price { get; set; }
+        public decimal price { get; set; }
+        public int stock { get; set; }
         public string image_url { get; set; }
         public int category_id { get; set; }
 

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Veluxe.Models.ProductModel>
+﻿@model Veluxe.Models.ProductModel
 namespace Veluxe.Views.Home
 
 @{
@@ -8,17 +8,25 @@ namespace Veluxe.Views.Home
 <link rel="stylesheet" href="~/css/productDesc.css" />
 
 <section class="product-section">
-    @foreach (var product in Model)
-    {
-        <img src="@product.image_url"  class="product-img"/>
+
+        <img src="~/assets/@Model.image_url"  class="product-img"/>
 
         <div class="product-details">
-            <h4>@product.product_name</h4>
-            <h5>@product.price</h5>
-            <p>@product.description</p>
-            <button class="add-to-cart-btn">Add to Cart</button>
+            <h4>@Model.product_name</h4>
+            <h5> Rs. @Model.price</h5>
+            <p>@Model.description</p>
+
+        @if (Model.stock > 0)
+        {
+            <form asp-controller="Cart" asp-action="AddToCart" method="post" style="display:inline;">
+                <input type="hidden" name="productId" value="@Model.product_id" />
+                <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+            </form>
+        }
+        else {
+            <span>Out of Stock</span>
+        }
         </div>
-    }
 
 
 

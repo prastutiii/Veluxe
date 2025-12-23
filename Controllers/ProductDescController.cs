@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Veluxe.Data;
+using Veluxe.Models;
 
 namespace Veluxe.Controllers
 {
@@ -11,10 +12,15 @@ namespace Veluxe.Controllers
         {
             _context = context;
         }
-        public IActionResult ProductDesc()
+        public IActionResult ProductDesc(int productId)
         {
-            var products = _context.Products.ToList();
-            return View(products);
+            var product = _context.Products
+            .FirstOrDefault(p => p.product_id == productId);
+
+            if (product == null)
+                return NotFound();
+
+            return View(product);
         }
     }
 }

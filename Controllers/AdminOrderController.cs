@@ -17,10 +17,13 @@ namespace Veluxe.Controllers
         }
         public IActionResult AdminOrder()
         {
-            var orders = _context.Orders
-                .Include(o => o.Users)
-                .ToList();
+             var orders = _context.Orders
+            .Include(o => o.Order_Details)
+            .ThenInclude(od => od.Products)
+            .OrderByDescending(o => o.order_date)
+            .ToList();
             return View(orders);
+           
         }
 
         // CREATE GET

@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<Veluxe.Models.OrderModel>
+
+@{
     ViewData["Title"] = "Manage Orders";
     Layout = "_AdminLayout";
 }
@@ -15,6 +17,8 @@
             <tr>
                 <th>Order ID</th>
                 <th>User</th>
+                <th>Address</th>
+                <th>Phone</th>
                 <th>Date</th>
                 <th>Amount</th>
                 <th>Status</th>
@@ -23,20 +27,31 @@
         </thead>
 
         <tbody>
-            @foreach (var item in Model)
+            @if (!Model.Any())
             {
                 <tr>
-                    <td>@item.order_id</td>
-                    <td>@item.Users?.name</td>
-                    <td>@item.order_date</td>
-                    <td>Rs. @item.total_amount</td>
-                    <td>@item.status</td>
-                    <td>
-                        <a asp-action="Read" asp-route-id="@item.order_id" class="edit-btn">View</a>
-                        <a asp-action="Update" asp-route-id="@item.order_id" class="edit-btn">Edit</a>
-                        <a asp-action="Delete" asp-route-id="@item.order_id" class="delete-btn">Delete</a>
-                    </td>
+                    <td colspan="8" style="text-align:center;">No orders found</td>
                 </tr>
+            }
+            else
+            {
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.order_id</td>
+                        <td>@item.first_name</td>
+                        <td>@item.address</td>
+                        <td>@item.phone_number</td>
+                        <td>@item.order_date.ToString("yyyy-MM-dd")</td>
+                        <td>Rs. @item.total_amount</td>
+                        <td>@item.status</td>
+                        <td>
+                            <a asp-action="Read" asp-route-id="@item.order_id" class="edit-btn">View</a>
+                            <a asp-action="Update" asp-route-id="@item.order_id" class="edit-btn">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@item.order_id" class="delete-btn">Delete</a>
+                        </td>
+                    </tr>
+                }
             }
         </tbody>
     </table>

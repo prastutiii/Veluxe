@@ -14,8 +14,8 @@ namespace Veluxe.Views.Home
     <div class="categories-container">
         @foreach (var product in Model)
         {
-            <a href="/ProductDesc/ProductDesc" class="categories-box">
-                <img src="@product.image_url" alt="@product.product_name">
+            <a class="categories-box" asp-controller="ProductDesc" asp-action="ProductDesc" asp-route-productId="@product.product_id">
+                <img src="~/assets/@product.image_url" alt="@product.product_name">
                 <div class="product-info">
                     <h4>@product.product_name</h4>
                     <p>@product.price</p>

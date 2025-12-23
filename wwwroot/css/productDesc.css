@@ -44,3 +44,15 @@
         transform: scale(1.05);
     }
 
+.outofstock {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: darkred;
+    border: groove;
+    border-color: darkred;
+    font-size: 14px;
+    font-weight: bold;
+}
+

@@ -1,4 +1,6 @@
 ﻿namespace Veluxe.Views.Home
+@model Veluxe.Models.CheckoutModel
+
 @{
     ViewData["Title"] = "Checkout";
 }
@@ -9,40 +11,40 @@
 
 <section class="checkout-section">
     <div class="billing-left">
-        <form action="/Confirm/Confirm">
+        <form asp-controller="Checkout" asp-action="PlaceOrder" method="post">
             <h5 class="form-title">Personal Details</h5>
             <div class="form-row">
                 <div class="form-group half">
                     <label>First Name</label>
-                    <input type="text" placeholder="Jane"/>
+                    <input asp-for="Orders.first_name" type="text" placeholder="Jane" />
                 </div>
 
                 <div class="form-group half">
                     <label>Last Name</label>
-                    <input type="text" placeholder="Doe"/>
+                    <input asp-for="Orders.last_name" type="text" placeholder="Doe" />
                 </div>
             </div>
 
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" placeholder="janedoe@example.com" />
+                <input asp-for="Orders.email" type="email" placeholder="janedoe@example.com" />
             </div>
 
             <div class="form-row">
                 <div class="form-group half">
                     <label>District</label>
-                    <input type="text" placeholder="Kathmandu" />
+                    <input asp-for="Orders.district" type="text" placeholder="Kathmandu" />
                 </div>
 
                 <div class="form-group half">
                     <label>Address</label>
-                    <input type="text" placeholder="Maharajgunj" />
+                    <input asp-for="Orders.address" type="text" placeholder="Maharajgunj" />
                 </div>
             </div>
 
             <div class="form-group">
                 <label>Phone Number</label>
-                <input type="tel" placeholder="0000000000" />
+                <input asp-for="Orders.phone_number" type="tel" placeholder="0000000000" />
             </div>
 
             <h5 class="form-title">Payment Details</h5>
@@ -74,24 +76,48 @@
     <div class="billing-right">
         <h5 class="form-title">Your Order</h5>
         <table class="order-table">
-            <tr>
-                <td>Product Name</td>
-                <td>Price</td>
-            </tr>
-            <tr>
-                <td>Product Name</td>
-                <td>Price</td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Unit Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Cart?.Cart_Products == null || !Model.Cart.Cart_Products.Any())
+                {
+                    <tr>
+                        <td colspan="4">Your cart is empty</td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var item in Model.Cart.Cart_Products)
+                    {
+                        <tr>
+                            <td>@item.Products?.product_name</td>
+                            <td>Rs. @item.Products?.price.ToString("0.00")</td>
+                            <td>@item.quantity</td>
+                            <td>Rs. @item.total_price.ToString("0.00")</td>
+                        </tr>
+                    }
+                }
+            </tbody>
         </table>
         <hr style="border: none; border-top: 1.5px solid black; margin: 15px 0;">
         <table class="order-table"> 
             <tr>
                 <td>Delivery Charge</td>
-                <td>Price</td>
+                <td>Rs. 100</td>
             </tr>
             <tr>
-                <td>SubTotal</td>
-                <td>Price</td>
+                <td>Subtotal</td>
+                <td>Rs. @Model.Cart.grand_total.ToString("0.00")</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>Rs. @(Model.Cart.grand_total + 100)</td>
             </tr>
             
         </table>

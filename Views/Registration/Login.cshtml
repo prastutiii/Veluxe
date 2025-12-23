@@ -31,6 +31,7 @@
                 <p class="switch-text">
                     Don't have an account? <a asp-controller="Registration" asp-action="Register">Register</a>
                 </p>
+
                 @if (ViewBag.Error != null)
                 {
                     <p style="color:red">@ViewBag.Error</p>

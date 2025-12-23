@@ -11,11 +11,19 @@ namespace Veluxe.Models
 
         [Required]
         public DateTime order_date { get; set; }
+        public string? first_name { get; set; }
+        public string? last_name { get; set; }
+        public string? email { get; set; }
+        public string? district { get; set; }
+        public string? address{ get; set; }
+        public string? phone_number { get; set; }
         public string status { get; set; }
-        public double total_amount { get; set; }
+        public decimal total_amount { get; set; }
         public int user_id { get; set; }
 
         [ForeignKey("user_id")]
         public UserModel Users { get; set; }
+
+        public List<OrderDetailModel> Order_Details { get; set; }
     }
 }
