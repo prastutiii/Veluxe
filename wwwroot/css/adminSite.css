@@ -122,6 +122,6 @@ body {
     margin-top: 60px;
     margin-left: 200px;
     padding: 30px;
-    width: calc(100% - 250px);
+    width: 80vw;
     box-sizing: border-box;
 }
