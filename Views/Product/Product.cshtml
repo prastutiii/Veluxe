@@ -8,11 +8,18 @@ namespace Veluxe.Views.Home
 
 <link rel="stylesheet" href="~/css/products.css" />
 
+@{
+    var bestOfFallProducts = Model.Where(p => p.category_id == 1);
+    var newArrivalsProducts = Model.Where(p => p.category_id == 2);
+    var glitzGlamProducts = Model.Where(p => p.category_id == 3);
+    var bestSellersProducts = Model.Where(p => p.category_id == 5);
+}
+
 <section class="categories-section">
-    <h4>Clothing</h4>
+    <h4>Best of Fall</h4>
 
     <div class="categories-container">
-        @foreach (var product in Model)
+        @foreach (var product in bestOfFallProducts)
         {
             <a class="categories-box" asp-controller="ProductDesc" asp-action="ProductDesc" asp-route-productId="@product.product_id">
                 <img src="~/assets/@product.image_url" alt="@product.product_name">
@@ -24,4 +31,57 @@ namespace Veluxe.Views.Home
         }
     </div>
 </section>
+
+<section class="categories-section">
+    <h4>New Arrivals</h4>
+
+    <div class="categories-container">
+        @foreach (var product in newArrivalsProducts)
+        {
+            <a class="categories-box" asp-controller="ProductDesc" asp-action="ProductDesc" asp-route-productId="@product.product_id">
+                <img src="~/assets/@product.image_url" alt="@product.product_name">
+                <div class="product-info">
+                    <h4>@product.product_name</h4>
+                    <h6>Rs. @product.price</h6>
+                </div>
+            </a>
+        }
+    </div>
+</section>
+
+<section class="categories-section">
+    <h4>Glitz & Glam</h4>
+
+    <div class="categories-container">
+        @foreach (var product in glitzGlamProducts)
+        {
+            <a class="categories-box" asp-controller="ProductDesc" asp-action="ProductDesc" asp-route-productId="@product.product_id">
+                <img src="~/assets/@product.image_url" alt="@product.product_name">
+                <div class="product-info">
+                    <h4>@product.product_name</h4>
+                    <h6>Rs. @product.price</h6>
+                </div>
+            </a>
+        }
+    </div>
+</section>
+
+<section class="categories-section">
+    <h4>Signature Formalwear</h4>
+
+    <div class="categories-container">
+        @foreach (var product in bestSellersProducts)
+        {
+            <a class="categories-box" asp-controller="ProductDesc" asp-action="ProductDesc" asp-route-productId="@product.product_id">
+                <img src="~/assets/@product.image_url" alt="@product.product_name">
+                <div class="product-info">
+                    <h4>@product.product_name</h4>
+                    <h6>Rs. @product.price</h6>
+                </div>
+            </a>
+        }
+    </div>
+</section>
+
+
 

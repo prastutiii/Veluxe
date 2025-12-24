@@ -18,11 +18,14 @@
 
 .categories-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 40px;
     align-items: flex-start;
     flex-wrap: nowrap;
     margin-top: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
 
     .categories-box {
         background-color: #fafaf7;
@@ -36,6 +39,8 @@
         display: inline-block;
         position: relative;
         z-index: 10;
+        flex-shrink: 0;
+        scroll-snap-align: start;
     }
 
         .categories-box:hover {
